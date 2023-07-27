@@ -17,19 +17,13 @@ This collection is used to store information about Videos.
 {
   "_id": "video_id"
   "image_url": "https://via.placeholder.com/300/09f/fff.png",
-  "video_url": "https://youtu.be/DMRRcLfzikQ",
+  "video_url": "https://video",
   "brand": "brand-name",
   "description": "brand-description",
   "products": [
     {
       "_id": "ref_product_id"
     },
-    {
-      "_id": "ref_product_id"
-    },
-    {
-      "_id": "ref_product_id"
-    }
   ],
   "__v": 0
 }
@@ -63,12 +57,28 @@ This collection is used to store information about Videos.
 | GET        | /api/videos             | Video list          |
 | GET        | /api/video/:videoID     | Product list        |
 | GET        | /api/comment/:videoID   | Comment list        |
-| GET        | api/search?brand={value}| Find Brand          |
-| POST       | /api/comment/:videoID   | Send Comment        |
+| GET        | api/search?brand={value}| Brand list          |
+| POST       | /api/comment/:videoID   | Add comment         |
+| POST       | /api/product            | Add Product         |
+| POST       | /api/video              | Add video           |
 
 
 ## API request and response
 Isi bagian ketiga...
 
 ## How to Run in Local
-isi bagian keempat
+To run in Local, Use Postman or cURL to interact with the API endpoints. Here is an example to run locally using Postman:
+* GET video list: to get the list of video data
+  http://localhost:3000/api/videos
+* GET product list: to get the list of product data and use videoID as the request   parameter
+  http://localhost:3000/api/video/product/{videoID}
+* GET comment list: to get the list of comments from the user and use videoID as     the request parameter
+  http://localhost:3000/api/comment/{videoID}
+* GET brand list: to get the value of the brand and use the brand as   the request   query from the database collection
+  http://localhost:3000/api/search?brand={value}
+* POST comment: to add a new comment and use videoID as the request parameter
+  http://localhost:3000/api/comment/{videoID}
+* POST product: to add new product data to the database
+  http://localhost:3000/api/product
+* POST video: to add new video data to the database
+  http://localhost:3000/api/video
