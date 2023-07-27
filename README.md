@@ -9,7 +9,13 @@
 - [How to Run in Local](#how-to-run-in-local)
 
 ## Database Structure
-Isi bagian pertama...
+# Collections
+
+## Collection 1: Videos
+
+## Collection 2: Products
+
+## Collection 3: Users
 
 ## API Structure
 Isi bagian kedua...
