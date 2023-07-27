@@ -58,11 +58,14 @@ This collection is used to store information about Videos.
 ```
 ## API Structure
 # Endpoints
-| Method    | Endpoint       | Description      |
-|------------|---------------|--------------|
-| Sel 1,1    | Sel 1,2       | Sel 1,3      |
-| Sel 2,1    | Sel 2,2       | Sel 2,3      |
-| Sel 3,1    | Sel 3,2       | Sel 3,3      |
+| Method     | Endpoint                | Description         |
+|------------|-------------------------|---------------------|
+| GET        | /api/videos             | Video list          |
+| GET        | /api/video/:videoID     | Product list        |
+| GET        | /api/comment/:videoID   | Comment list        |
+| GET        | api/search?brand={value}| Find Brand          |
+| POST       | /api/comment/:videoID   | Send Comment        |
+
 
 ## API request and response
 Isi bagian ketiga...
