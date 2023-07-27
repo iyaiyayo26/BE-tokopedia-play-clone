@@ -3,15 +3,19 @@
 
 ## Table of Contents
 
-- [Judul Bagian Pertama](#judul-bagian-pertama)
-- [Judul Bagian Kedua](#judul-bagian-kedua)
-- [Judul Bagian Ketiga](#judul-bagian-ketiga)
+- [Database Structure](#database-structure)
+- [API Structure](#api-structure)
+- [API Request and Response](#api-request-and-response)
+- [How to Run in Local](#how-to-run-in-local)
 
-## Judul Bagian Pertama
+## Database Structure
 Isi bagian pertama...
 
-## Judul Bagian Kedua
+## API Structure
 Isi bagian kedua...
 
-## Judul Bagian Ketiga
+## API request and response
 Isi bagian ketiga...
+
+## How to Run in Local
+isi bagian keempat
