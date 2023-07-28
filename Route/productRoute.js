@@ -3,7 +3,6 @@ const router = express.Router();
 const Products = require('../Model/products');
 const Video = require('../Model/video');
 
-//get list of product (id, link, title, price)
 router.get('/video/product/:videoId', async (req, res) => {
     const videoId = req.params.videoId;
     try {
@@ -23,7 +22,6 @@ router.get('/video/product/:videoId', async (req, res) => {
     }
 })
 
-//post produk:
 router.post('/product', async (req, res) => {
     const {link, title, price} = req.body;
     try {
