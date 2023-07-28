@@ -52,20 +52,205 @@ This collection is used to store information about Videos.
 ```
 ## API Structure
 # Endpoints
-| Method     | Endpoint                | Description         |
-|------------|-------------------------|---------------------|
-| GET        | /api/videos             | Video list          |
-| GET        | /api/video/:videoID     | Product list        |
-| GET        | /api/comment/:videoID   | Comment list        |
-| GET        | api/search?brand={value}| Brand list          |
-| POST       | /api/comment/:videoID   | Add comment         |
-| POST       | /api/product            | Add Product         |
-| POST       | /api/video              | Add video           |
+| Method     | Endpoint                        | Description         |
+|------------|---------------------------------|---------------------|
+| GET        | /api/videos                     | Video list          |
+| GET        | /api/video/product/:videoID     | Product list        |
+| GET        | /api/comment/:videoID           | Comment list        |
+| GET        | api/search?brand={value}        | Brand list          |
+| POST       | /api/comment/:videoID           | Add comment         |
+| POST       | /api/product                    | Add Product         |
+| POST       | /api/video                      | Add video           |
 
 
 ## API request and response
-Isi bagian ketiga...
+#Video
+  * Video object
+```
+{
+  image_url: string
+  video_url: string
+  brand: string
+  description: string
+  products: [{product_objectId}, {product_objectId}, {product_objectId}]
+}
+```
+#GET /api/videos
+Returns all videos 
+  * URL Params
+    None
+  * Data Params
+    None
+  * Headers
+    Content-Type: application/json
+  * Success Response
+    Code: 200
+```
+{
+  id: objectId
+  image_url: string
+  video_url: string
+  brand: string
+  description: string
+  products: [{product_objectId}, {product_objectId}, {product_objectId}]
+}
+```
+  * Failed Response
+    Code: 500
+    Content: `{message: error.message}`
 
+
+#POST /api/video
+Creates a new video and returns the new object 
+  * URL Params
+    None
+  * Data Params
+```
+{
+  image_url: string
+  video_url: string
+  brand: string
+  description: string
+  products: [{product_objectId}, {product_objectId}, {product_objectId}]
+}
+```
+  * Headers
+    Content-Type: application/json
+  * Success Response
+    Code: 201
+    Content: `{<video_object>}`
+  * Failed Response
+    Code: 400
+    Content: `{message: error.message}`
+
+#GET /api/search?brand
+Returns all videos that match the string value in query params
+  * URL Params
+    None
+  * Data Params
+    None
+  * Query Params
+    *Required:* `brand={string}`
+  * Success Response
+    Code: 200
+    Content:
+```
+[
+  {video_object},
+  {video_object}
+]
+```
+  * Failed Response
+    Code: 500
+    Content: `{message: error.message}`
+
+#Product
+  * Product object
+```
+{
+  id: objectId
+  link: string
+  title: string
+  price integer
+}
+```
+#GET /api/video/product/:videoId
+Returns all products based on videoId as parameter
+  * URL Params
+    *Required:* `videoId=[objectId]`
+  * Data Params
+    None
+  * Query Params
+    None
+  * Success Response
+    Code: 200
+    Content:
+```
+[
+  {<product_object>},
+  {<product_object>},
+  {<product_object>}
+]
+```
+  * Failed Response
+    Code: 500
+    Content: `{message: error.message}`
+
+#POST /api/product
+create a new product and returns new object
+  * URL Params
+    None
+  * Data Params
+```
+{
+  link: string,
+  title:  string,
+  price:  integer
+}
+```
+  * Query Params
+    None
+  * Success Response
+    Code: 200
+    Content: `{product_object}`
+  * Failed Response
+    Code: 400
+    Content: `{message: error.message}`
+
+
+#User
+  * User object
+```
+{
+  _id: objectId
+  username: string
+  comment: string
+  videoId: ref_video_objectId
+  timestamp: Date.now
+}
+```
+#GET /api/comment/:videoId
+Returns all comments based on videoId as parameter endpoint
+  * URL Params
+    *Required:* `videoId=[objectId]`
+  * Data Params
+    None
+  * Query Params
+    None
+  * Success Response
+    Code: 200
+ ```
+[
+  {user_object},
+  {user_object}
+]
+ ```
+  * Failed Response
+    Code: 404
+    Content: `{message: 'Tidak ada comment'}`
+    Code 500
+    Content: `{error: 'Failed to retrieve user data'}`
+
+#POST /comment/:videoId
+create new comment based on videoId as parameter endpoint
+  * URL Params
+    *Required:* `videoId=[objectId]`
+  * Data Params
+```
+{
+  username: string,
+  comment: string
+}
+```
+  * Query Params
+    None
+  * Success Response
+    Code: 201 `{success: true, message: 'Comment berhasil ditambahkan'}`
+  * Failed Response
+    Code: 400
+    Content: `{success: false, message: error.message}`
+    
+    
 ## How to Run in Local
 To run in Local, Use Postman or cURL to interact with the API endpoints. Here is an example to run locally using Postman:
 * GET video list: to get the list of video data
