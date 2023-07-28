@@ -22,7 +22,6 @@ router.post('/comment/:videoId', async (req, res) => {
     }
 })
 
-//get comment berdasarkan videoId:
 router.get('/comment/:videoId', async (req, res) => {
     try {
         const videoId = req.params.videoId;
