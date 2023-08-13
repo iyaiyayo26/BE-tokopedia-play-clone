@@ -6,7 +6,7 @@
 - [Database Structure](#database-structure)
 - [API Structure](#api-structure)
 - [API Request and Response](#api-request-and-response)
-- [How to Run in Local](#how-to-run-in-local)
+- [How to Run the API](#how-to-run-the-API)
 
 ## Database Structure
 # Collections
@@ -251,19 +251,20 @@ create new comment based on videoId as parameter endpoint
     Content: `{success: false, message: error.message}`
     
     
-## How to Run in Local
-To run in Local, Use Postman or cURL to interact with the API endpoints. Here is an example to run locally using Postman:
+## How to Run the API (https://be-tokopedia-play-clone-production.up.railway.app)
+To run with the hosted API URL, Use Postman or cURL to interact with the API endpoints. Here is an example to run locally using Postman:
 * GET video list: to get the list of video data
-  http://localhost:3000/api/videos
+  [http://localhost:3000](https://be-tokopedia-play-clone-production.up.railway.app/api/videos)
 * GET product list: to get the list of product data and use videoID as the request   parameter
-  http://localhost:3000/api/video/product/{videoID}
+  [http://localhost:3000](https://be-tokopedia-play-clone-production.up.railway.app/api/video/product/{videoID})
 * GET comment list: to get the list of comments from the user and use videoID as     the request parameter
-  http://localhost:3000/api/comment/{videoID}
+  [http://localhost:3000](https://be-tokopedia-play-clone-production.up.railway.app/api/comment/{videoID})
 * GET brand list: to get the value of the brand and use the brand as   the request   query from the database collection
-  http://localhost:3000/api/search?brand={value}
+  [http://localhost:3000](https://be-tokopedia-play-clone-production.up.railway.app/api/search?brand={value})
 * POST comment: to add a new comment and use videoID as the request parameter
-  http://localhost:3000/api/comment/{videoID}
+  [http://localhost:3000](https://be-tokopedia-play-clone-production.up.railway.app/api/comment/{videoID})
 * POST product: to add new product data to the database
-  http://localhost:3000/api/product
+  [http://localhost:3000](https://be-tokopedia-play-clone-production.up.railway.app/api/product)
 * POST video: to add new video data to the database
-  http://localhost:3000/api/video
+  [http://localhost:3000](https://be-tokopedia-play-clone-production.up.railway.app/api/video)
+
