@@ -254,17 +254,23 @@ create new comment based on videoId as parameter endpoint
 ## How to Run the API (https://be-tokopedia-play-clone-production.up.railway.app)
 To run with the hosted API URL, Use Postman or cURL to interact with the API endpoints. Here is an example to run locally using Postman:
 * GET video list: to get the list of video data
-  [http://localhost:3000](https://be-tokopedia-play-clone-production.up.railway.app/api/videos)
+  [https://be-tokopedia-play-clone-production.up.railway.app/api/videos]
+  
 * GET product list: to get the list of product data and use videoID as the request   parameter
-  [http://localhost:3000](https://be-tokopedia-play-clone-production.up.railway.app/api/video/product/{videoID})
+  [https://be-tokopedia-play-clone-production.up.railway.app/api/video/product/{videoID}]
+  
 * GET comment list: to get the list of comments from the user and use videoID as     the request parameter
-  [http://localhost:3000](https://be-tokopedia-play-clone-production.up.railway.app/api/comment/{videoID})
+  [https://be-tokopedia-play-clone-production.up.railway.app/api/comment/{videoID}]
+  
 * GET brand list: to get the value of the brand and use the brand as   the request   query from the database collection
-  [http://localhost:3000](https://be-tokopedia-play-clone-production.up.railway.app/api/search?brand={value})
+  [https://be-tokopedia-play-clone-production.up.railway.app/api/search?brand={value}]
+  
 * POST comment: to add a new comment and use videoID as the request parameter
-  [http://localhost:3000](https://be-tokopedia-play-clone-production.up.railway.app/api/comment/{videoID})
+  [https://be-tokopedia-play-clone-production.up.railway.app/api/comment/{videoID}]
+  
 * POST product: to add new product data to the database
-  [http://localhost:3000](https://be-tokopedia-play-clone-production.up.railway.app/api/product)
+  [https://be-tokopedia-play-clone-production.up.railway.app/api/product]
+  
 * POST video: to add new video data to the database
-  [http://localhost:3000](https://be-tokopedia-play-clone-production.up.railway.app/api/video)
+  [https://be-tokopedia-play-clone-production.up.railway.app/api/video]
 
